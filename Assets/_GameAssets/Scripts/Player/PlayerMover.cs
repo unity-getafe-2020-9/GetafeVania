@@ -27,7 +27,6 @@ public class PlayerMover : MonoBehaviour
             Saltar();
         }
     }
-
     private void FixedUpdate()
     {
         Desplazar();
@@ -43,7 +42,6 @@ public class PlayerMover : MonoBehaviour
             animator.SetBool("Running", false);
         }
     }
-
     void Saltar()
     {
         rigidbody.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);

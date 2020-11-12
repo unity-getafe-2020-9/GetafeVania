@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ public class TwoPointsMover : MonoBehaviour
     public Transform destino;
     public GameObject objetoAMover;
     public float speed;
+    public bool rotate;
     private Vector2 nuevaPosicion;
     private float pct=0f;//Porcentaje de desplazamiento
     void Update()
@@ -19,13 +21,13 @@ public class TwoPointsMover : MonoBehaviour
         {
             pct = 1;
             speed*= -1;
-            objetoAMover.transform.localScale = new Vector2(1, 1);
+            if (rotate) objetoAMover.transform.localScale = new Vector2(1, 1);
         }
         if (pct <= 0)
         {
             pct = 0;
             speed*= -1;
-            objetoAMover.transform.localScale = new Vector2(-1, 1);
+            if (rotate) objetoAMover.transform.localScale = new Vector2(-1, 1);
         }
     }
 }
