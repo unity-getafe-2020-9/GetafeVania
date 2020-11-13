@@ -9,10 +9,12 @@ public class PlayerMover : MonoBehaviour
     public float fuerzaSalto=1;
     [Range(1, 1000)]
     public float speed=10;
-    float x;
-    float y;
-    Rigidbody2D rigidbody;
-    Animator animator;
+    private float x;
+    private float y;
+    private Rigidbody2D rigidbody;
+    private Animator animator;
+    private bool estaSiendoDespedido = false;
+
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -31,10 +33,22 @@ public class PlayerMover : MonoBehaviour
     {
         Desplazar();
     }
+
+    /// <summary>
+    /// Se invoca cuando se topa con los pinchos y estos le lanzan hacia atras.
+    /// </summary>
+    public void IniciarDespido()
+    {
+        estaSiendoDespedido = true;
+    }
     void Desplazar()
     {
-        rigidbody.velocity = new Vector2(x * Time.deltaTime * speed, rigidbody.velocity.y);
-        if (Mathf.Abs(rigidbody.velocity.x) > 0)
+        if (!estaSiendoDespedido)
+        {
+            rigidbody.velocity = new Vector2(x * Time.deltaTime * speed, rigidbody.velocity.y);
+        }
+        
+        if (Mathf.Abs(rigidbody.velocity.x) > 0.005f)
         {
             animator.SetBool("Running", true);
         } else
@@ -44,6 +58,13 @@ public class PlayerMover : MonoBehaviour
     }
     void Saltar()
     {
-        rigidbody.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
+        if (Mathf.Abs(rigidbody.velocity.y) < 0.01f)
+        {
+            rigidbody.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        estaSiendoDespedido = false;
     }
 }

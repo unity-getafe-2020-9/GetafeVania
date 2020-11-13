@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
             //GameOver
         } else
         {
-            player.GetComponentInChildren<Flasher>().Flash();
+            //player.GetComponentInChildren<Flasher>().Flash();
             GetComponent<UIManager>().CrearVidasUI(numeroVidas, prefabImagenVida, panelVidas);
         }
     }
@@ -66,6 +66,11 @@ public class GameManager : MonoBehaviour
     {
         hasKey = true;
         GetComponent<UIManager>().ActivarLlaveUI();
+    }
+
+    public void IncrementarPuntuacion(int puntos)
+    {
+        puntuacion += puntos;
     }
     public void GuardarEstado()
     {
