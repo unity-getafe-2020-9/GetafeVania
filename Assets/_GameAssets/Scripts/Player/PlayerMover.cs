@@ -15,10 +15,12 @@ public class PlayerMover : MonoBehaviour
     private Animator animator;
     private bool estaSiendoDespedido = false;
 
+    private PlayerSoundManager psm;
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
+        psm = GetComponent<PlayerSoundManager>();
     }
     private void Update()
     {
@@ -61,6 +63,7 @@ public class PlayerMover : MonoBehaviour
         if (Mathf.Abs(rigidbody.velocity.y) < 0.01f)
         {
             rigidbody.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
+            psm.PlayAudioJump();
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

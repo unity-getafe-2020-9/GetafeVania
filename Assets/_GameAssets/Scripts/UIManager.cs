@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
         {
             GameObject nuevaImagenVida = Instantiate(prefabImagenVida, transform.position, transform.rotation);
             nuevaImagenVida.transform.SetParent(panelVidas.transform);
+            nuevaImagenVida.transform.localScale = Vector3.one;
         }
     }
 

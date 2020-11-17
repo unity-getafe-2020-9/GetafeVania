@@ -9,6 +9,7 @@ public class Abejorro : MonoBehaviour
         if (collision.transform.CompareTag("Player"))
         {
             GameObject.Find("GameManager").GetComponent<GameManager>().QuitarVida();
+            collision.gameObject.GetComponent<PlayerManager>().RecibirDanyo();
             Destroy(transform.parent.gameObject);
         }
     }

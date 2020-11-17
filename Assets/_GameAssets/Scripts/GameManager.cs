@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -41,11 +42,14 @@ public class GameManager : MonoBehaviour
     //UI
     public GameObject prefabImagenVida;
     public GameObject panelVidas;
+    public Text txtPuntuacion;
     
     private GameObject player;
 
     private void Awake()
     {
+        puntuacion = 0;
+        txtPuntuacion.text = puntuacion.ToString();
         numeroVidas = numeroVidasMaximo;
         GetComponent<UIManager>().CrearVidasUI(numeroVidas, prefabImagenVida, panelVidas);
         player = GameObject.Find("Player");
@@ -71,6 +75,7 @@ public class GameManager : MonoBehaviour
     public void IncrementarPuntuacion(int puntos)
     {
         puntuacion += puntos;
+        txtPuntuacion.text = puntuacion.ToString();
     }
     public void GuardarEstado()
     {
