@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PlataformaHundibleScript : MonoBehaviour
 {
+    bool seHaIniciadoBajada = false;
     bool estaBajando = false;
     public float speed;
+    public float tiempoEspera;
 
     private void Update()
     {
@@ -16,15 +18,15 @@ public class PlataformaHundibleScript : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!estaBajando && collision.gameObject.CompareTag("Player"))
+        if (!seHaIniciadoBajada && collision.gameObject.CompareTag("Player"))
         {
-            estaBajando = true;
+            seHaIniciadoBajada = true;
+            Invoke("IniciarDescenso", tiempoEspera);
         }
     }
 
-    private void OnBecameInvisible()
+    private void IniciarDescenso()
     {
-        print("NO ME VES");
-        Destroy(gameObject);
+        estaBajando = true;
     }
 }

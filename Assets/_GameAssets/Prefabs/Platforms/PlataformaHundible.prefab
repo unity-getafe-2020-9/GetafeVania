@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6096773280405153525}
   m_Layer: 0
   m_Name: PlataformaHundible
-  m_TagString: Untagged
+  m_TagString: Adherente
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,7 +57,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.21333122, y: 0.2055682}
+  m_Size: {x: 0.195, y: 0.2}
   m_EdgeRadius: 0
 --- !u!114 &6096773280405153525
 MonoBehaviour:
@@ -72,6 +72,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.5
+  tiempoEspera: 0.5
 --- !u!1 &6096773281303253149
 GameObject:
   m_ObjectHideFlags: 0
@@ -85,7 +86,7 @@ GameObject:
   - component: {fileID: 6096773281303253150}
   m_Layer: 0
   m_Name: Model
-  m_TagString: Untagged
+  m_TagString: Adherente
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

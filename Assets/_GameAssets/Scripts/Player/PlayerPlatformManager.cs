@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerPlatformManager : MonoBehaviour
 {
     private const string TAG_ADHERENTE = "Adherente";
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag(TAG_ADHERENTE))
         {
