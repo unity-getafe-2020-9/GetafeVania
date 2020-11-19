@@ -15,7 +15,12 @@ public class PlayerMover : MonoBehaviour
     private Animator animator;
     private bool estaSiendoDespedido = false;
 
+    //Referencial al Joystick virtual
+    public FixedJoystick vJoystick;
+
+    //Referencial al sound manager
     private PlayerSoundManager psm;
+
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -24,8 +29,15 @@ public class PlayerMover : MonoBehaviour
     }
     private void Update()
     {
-        x = Input.GetAxis("Horizontal");
-        y = Input.GetAxis("Vertical");
+        if (vJoystick.isActiveAndEnabled)
+        {
+            x = vJoystick.Horizontal;
+            y = vJoystick.Vertical;
+        } else
+        {
+            x = Input.GetAxis("Horizontal");
+            y = Input.GetAxis("Vertical");
+        }
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Saltar();
@@ -49,7 +61,6 @@ public class PlayerMover : MonoBehaviour
         {
             rigidbody.velocity = new Vector2(x * Time.deltaTime * speed, rigidbody.velocity.y);
         }
-        
         if (Mathf.Abs(rigidbody.velocity.x) > 0.005f)
         {
             animator.SetBool("Running", true);
@@ -58,7 +69,7 @@ public class PlayerMover : MonoBehaviour
             animator.SetBool("Running", false);
         }
     }
-    void Saltar()
+    public void Saltar()
     {
         if (Mathf.Abs(rigidbody.velocity.y) < 0.01f)
         {
@@ -70,4 +81,5 @@ public class PlayerMover : MonoBehaviour
     {
         estaSiendoDespedido = false;
     }
+    
 }

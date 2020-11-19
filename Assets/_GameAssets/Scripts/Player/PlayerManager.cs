@@ -5,8 +5,10 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     private PlayerSoundManager psm;
+    public bool x;
     private void Awake()
     {
+        x = false;
         psm = GetComponent<PlayerSoundManager>();
     }
     private void OnCollisionEnter2D(Collision2D collision)

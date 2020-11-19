@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField]
+    private bool useVJoystick;
+    
     public enum Estado { Menu, Pause, Playing, GameOver}
 
     private const int TIME_TO_RELOAD = 2;
@@ -47,6 +50,7 @@ public class GameManager : MonoBehaviour
     public GameObject panelVidas;
     public Text txtPuntuacion;
     public GameObject txtGameOver;
+    public GameObject mobileControls;
     
     //PLAYER
     private GameObject player;
@@ -60,6 +64,13 @@ public class GameManager : MonoBehaviour
         txtPuntuacion.text = puntuacion.ToString();
         numeroVidas = numeroVidasMaximo;
         GetComponent<UIManager>().CrearVidasUI(numeroVidas, prefabImagenVida, panelVidas);
+        if (UseVJoystick())
+        {
+            mobileControls.SetActive(true);
+        } else
+        {
+            mobileControls.SetActive(false);
+        }
     }
     public void QuitarVida()
     {
@@ -113,4 +124,9 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("CoverScene");
     }
+    private bool UseVJoystick()
+    {
+        return useVJoystick;
+    }
+
 }

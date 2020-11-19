@@ -17,6 +17,7 @@ public class CoverUIManager : MonoBehaviour
     }
     public void LoadScene1()
     {
+        PlayerPrefs.DeleteKey("Score");//PlayerPrefs.DeleteAll();//Borra todo.
         SceneManager.LoadScene("Scene1");
     }
     public void LoadStoredGame()

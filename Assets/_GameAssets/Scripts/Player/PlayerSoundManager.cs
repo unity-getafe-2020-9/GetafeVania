@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +8,7 @@ public class PlayerSoundManager : MonoBehaviour
 {
     public AudioClip audioCoin;
     public AudioClip audioKey;
+
     public AudioClip audioJump;
     public AudioClip audioLanding;
     public AudioClip audioFire;
@@ -39,5 +41,9 @@ public class PlayerSoundManager : MonoBehaviour
     public void PlayAudioDamage()
     {
         audioSource.PlayOneShot(audioDamage);
+    }
+    public void PlayAudioFire()
+    {
+        audioSource.PlayOneShot(audioFire);
     }
 }
