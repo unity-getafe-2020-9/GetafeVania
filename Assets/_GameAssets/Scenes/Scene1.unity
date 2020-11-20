@@ -44976,7 +44976,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 340, y: -169.89517}
+  m_AnchoredPosition: {x: 340, y: -90}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &229705189
@@ -46925,7 +46925,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f008360b39da4ce40b69691a0034e4f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useVJoystick: 1
+  useVJoystick: 0
   estado: 0
   soundOn: 1
   musicOn: 1
@@ -48569,7 +48569,7 @@ PrefabInstance:
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -109.89517
+      value: -26
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
         type: 3}
@@ -108003,7 +108003,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 340, y: -69.89517}
+  m_AnchoredPosition: {x: 340, y: 10}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1939857628

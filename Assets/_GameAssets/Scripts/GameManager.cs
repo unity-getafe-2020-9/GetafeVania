@@ -126,7 +126,21 @@ public class GameManager : MonoBehaviour
     }
     private bool UseVJoystick()
     {
+        bool mobilePlatfomr =
+            ((Application.platform == RuntimePlatform.Android)
+            ||
+            (Application.platform == RuntimePlatform.IPhonePlayer));
+        if (mobilePlatfomr)
+        {
+            //En un dispositivo movil
+            useVJoystick = true;
+        }
+        else if (Application.platform != RuntimePlatform.WindowsEditor) 
+        {
+            //En el resto
+            useVJoystick = false;
+        }
+        //En el Editor de Unity
         return useVJoystick;
     }
-
 }
