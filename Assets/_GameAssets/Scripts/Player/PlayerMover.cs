@@ -25,10 +25,15 @@ public class PlayerMover : MonoBehaviour
         rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
         psm = GetComponent<PlayerSoundManager>();
+        //Asignación del VIRTUAL JOYSTICK
+        if (GameObject.Find("Fixed Joystick") != null)
+        {
+            vJoystick = GameObject.Find("Fixed Joystick").GetComponent<FixedJoystick>();
+        }
     }
     private void Update()
     {
-        if (vJoystick.isActiveAndEnabled)
+        if (vJoystick!=null && vJoystick.isActiveAndEnabled)
         {
             x = vJoystick.Horizontal;
             y = vJoystick.Vertical;

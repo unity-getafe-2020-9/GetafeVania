@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlataformaHundibleScript : MonoBehaviour
 {
     bool seHaIniciadoBajada = false;
-    bool estaBajando = false;
+    public bool estaBajando = false;
     public float speed;
     public float tiempoEspera;
 

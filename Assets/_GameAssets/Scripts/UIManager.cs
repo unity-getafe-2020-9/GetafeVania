@@ -5,7 +5,12 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public Image imagenLlave;
+    private Image imagenLlave;
+
+    private void Awake()
+    {
+        imagenLlave = GameObject.Find("ImageKeyOn").GetComponent<Image>();
+    }
 
     /// <summary>
     /// Crea las imagenes de los corazones en la UI del juego

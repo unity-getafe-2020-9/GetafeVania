@@ -9,9 +9,18 @@ public class PlayerOrientator : MonoBehaviour
     //Valor de x del input (el que sea)
     float x;
 
+    private void Awake()
+    {
+        //Asignación del VIRTUAL JOYSTICK
+        if (GameObject.Find("Fixed Joystick") != null)
+        {
+            vJoystick = GameObject.Find("Fixed Joystick").GetComponent<FixedJoystick>();
+        }
+    }
+
     void Update()
     {
-        if (vJoystick.isActiveAndEnabled)
+        if (vJoystick!=null && vJoystick.isActiveAndEnabled)
         {
             x = vJoystick.Horizontal;
         } else

@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class DestructorPadrePorCamara : MonoBehaviour
 {
+    PlataformaHundibleScript phs;
+    private void Awake()
+    {
+        phs = GetComponentInParent<PlataformaHundibleScript>();
+    }
     private void OnBecameInvisible()
     {
-        Destroy(transform.parent.gameObject);
+        if (phs.estaBajando)
+        {
+            Destroy(transform.parent.gameObject);
+        }
     }
 }

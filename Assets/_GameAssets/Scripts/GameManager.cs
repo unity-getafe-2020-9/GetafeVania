@@ -47,10 +47,10 @@ public class GameManager : MonoBehaviour
     [Header("CONFIGURACION UI")]
     //UI
     public GameObject prefabImagenVida;
-    public GameObject panelVidas;
-    public Text txtPuntuacion;
-    public GameObject txtGameOver;
-    public GameObject mobileControls;
+    private GameObject panelVidas;
+    private Text txtPuntuacion;
+    private GameObject txtGameOver;
+    private GameObject mobileControls;
     
     //PLAYER
     private GameObject player;
@@ -58,6 +58,13 @@ public class GameManager : MonoBehaviour
     public static bool continueGame = false;
     private void Awake()
     {
+        //Obtención de referencias
+        panelVidas = GameObject.Find("PanelCorazones");
+        txtPuntuacion = GameObject.Find("TxtScore").GetComponent<Text>();
+        txtGameOver = GameObject.Find("TextGameOver");
+        txtGameOver.SetActive(false);
+        mobileControls = GameObject.Find("MobileControls");
+
         player = GameObject.Find("Player");
         puntuacion = 0;
         if (continueGame) RecuperarEstado();
@@ -110,6 +117,7 @@ public class GameManager : MonoBehaviour
     }
     public void RecuperarEstado()
     {
+        continueGame = false;
         if (PlayerPrefs.HasKey("Score"))
         {
             puntuacion = PlayerPrefs.GetInt("Score");

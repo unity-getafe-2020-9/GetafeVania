@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6096773280405153527}
   - component: {fileID: 6096773280405153524}
   - component: {fileID: 6096773280405153525}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PlataformaHundible
   m_TagString: Adherente
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 6096773281303253151}
   - component: {fileID: 6096773281303253148}
   - component: {fileID: 6096773281303253150}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Model
   m_TagString: Adherente
   m_Icon: {fileID: 0}

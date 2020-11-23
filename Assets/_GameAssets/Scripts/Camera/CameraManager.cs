@@ -33,6 +33,9 @@ public class CameraManager : MonoBehaviour
     private void Awake()
     {
         cvc = GetComponent<CinemachineVirtualCamera>();
+        playerRigidbody = GameObject.Find("Player").GetComponent<Rigidbody2D>();
+        cvc.Follow = GameObject.Find("Player").transform;
+        cvc.LookAt = GameObject.Find("Player").transform;
     }
     void Start()
     {
