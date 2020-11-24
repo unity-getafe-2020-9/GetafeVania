@@ -81,6 +81,8 @@ public class GameManager : MonoBehaviour
     }
     public void QuitarVida()
     {
+        if (godMode) return;
+
         numeroVidas--;
         GetComponent<UIManager>().CrearVidasUI(numeroVidas, prefabImagenVida, panelVidas);
         if (numeroVidas == 0)
@@ -89,9 +91,6 @@ public class GameManager : MonoBehaviour
             txtGameOver.SetActive(true);
             player.SetActive(false);
             Invoke(nameof(LoadCoverScene), TIME_TO_RELOAD);
-        } else
-        {
-            //player.GetComponentInChildren<Flasher>().Flash();
         }
     }
     public void RecogerLlave()

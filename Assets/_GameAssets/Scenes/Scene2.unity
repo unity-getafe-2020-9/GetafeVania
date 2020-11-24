@@ -6210,6 +6210,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6594202979317415659, guid: 30ec26bf32f21cf4db66f08ab118fe11,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 6594202979317415659, guid: 30ec26bf32f21cf4db66f08ab118fe11,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 6594202979976256725, guid: 30ec26bf32f21cf4db66f08ab118fe11,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -6230,6 +6240,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6594202979976256725, guid: 30ec26bf32f21cf4db66f08ab118fe11,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 6594202979976256725, guid: 30ec26bf32f21cf4db66f08ab118fe11,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 6594202979980604949, guid: 30ec26bf32f21cf4db66f08ab118fe11,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -6249,6 +6269,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6594202979980604949, guid: 30ec26bf32f21cf4db66f08ab118fe11,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 6594202979980604949, guid: 30ec26bf32f21cf4db66f08ab118fe11,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 8528605203540704053, guid: 30ec26bf32f21cf4db66f08ab118fe11,
         type: 3}
@@ -6369,6 +6399,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8528605205133303778, guid: 30ec26bf32f21cf4db66f08ab118fe11,
+        type: 3}
+      propertyPath: m_ChildScaleWidth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8528605205133303778, guid: 30ec26bf32f21cf4db66f08ab118fe11,
+        type: 3}
+      propertyPath: m_ChildScaleHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8528605205133303778, guid: 30ec26bf32f21cf4db66f08ab118fe11,
+        type: 3}
+      propertyPath: m_ChildForceExpandWidth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8528605205133303778, guid: 30ec26bf32f21cf4db66f08ab118fe11,
+        type: 3}
+      propertyPath: m_ChildControlWidth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8528605205133303778, guid: 30ec26bf32f21cf4db66f08ab118fe11,
+        type: 3}
+      propertyPath: m_ChildControlHeight
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30ec26bf32f21cf4db66f08ab118fe11, type: 3}
@@ -6757,15 +6812,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4445926613993314032, guid: 8dd3e4c142824574a9eccb90cc5ee120,
+        type: 3}
+      propertyPath: rate
+      value: 21
+      objectReference: {fileID: 0}
     - target: {fileID: 4445926613993314036, guid: 8dd3e4c142824574a9eccb90cc5ee120,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.73
+      value: -4.41
       objectReference: {fileID: 0}
     - target: {fileID: 4445926613993314036, guid: 8dd3e4c142824574a9eccb90cc5ee120,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.11
+      value: 4.01
       objectReference: {fileID: 0}
     - target: {fileID: 4445926613993314036, guid: 8dd3e4c142824574a9eccb90cc5ee120,
         type: 3}
@@ -9709,7 +9769,7 @@ PrefabInstance:
     - target: {fileID: 1611690398814297665, guid: 42998b5583333ab46bd9fa3bdb271c71,
         type: 3}
       propertyPath: nextSceneName
-      value: Scene3
+      value: CoverScene
       objectReference: {fileID: 0}
     - target: {fileID: 1611690398814297667, guid: 42998b5583333ab46bd9fa3bdb271c71,
         type: 3}

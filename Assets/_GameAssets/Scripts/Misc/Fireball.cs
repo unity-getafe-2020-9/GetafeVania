@@ -10,6 +10,10 @@ public class Fireball : MonoBehaviour
         {
             Destroy(collision.transform.parent.gameObject);//Ojo a la estructura
         }
-        Destroy(gameObject);
+        if (collision.CompareTag("Player") == false)
+        {
+            //Sólo se destruye si no "hacer trigger" contra el player
+            Destroy(gameObject);
+        }
     }
 }

@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+    private GameManager gameManager;
     private PlayerSoundManager psm;
-    public bool x;
     private void Awake()
     {
-        x = false;
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         psm = GetComponent<PlayerSoundManager>();
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -21,10 +21,13 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-
-
     public void RecibirDanyo()
-    {
-        psm.PlayAudioDamage();
+    {   
+        if (gameManager.godMode == false)
+        {
+            GameObject.Find("GameManager").GetComponent<GameManager>().QuitarVida();
+            psm.PlayAudioDamage();
+            GetComponent<Flasher>().Flash();//Llamada al Flasher para que parpadee
+        }
     }
 }

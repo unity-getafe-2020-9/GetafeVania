@@ -18,9 +18,12 @@ public class PlayerReaction : MonoBehaviour
     public void JumpBack()
     {
         if (!canJump) return;//Si no puedes saltar, no sigas.
+        if (GameObject.Find("GameManager").GetComponent<GameManager>().godMode) return;//Si está en modo dios, no sigas.
+
         Vector2 direccionSalto = new Vector2(fuerzaHorizontal * direccion, fuerzaVertical);
         GetComponent<PlayerMover>().IniciarDespido();
-        GetComponent<Rigidbody2D>().AddForce(direccionSalto, ForceMode2D.Impulse);
+        //GetComponent<Rigidbody2D>().AddForce(direccionSalto, ForceMode2D.Impulse);//Depende de la masa (que depende del movimiento)
+        GetComponent<Rigidbody2D>().velocity = direccionSalto;//No depende de nada
         canJump = false;
         Invoke("RestaurarEstado", 0.2f);
     }

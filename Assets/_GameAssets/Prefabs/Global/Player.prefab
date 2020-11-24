@@ -260,6 +260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fuerzaSalto: 3.7
   speed: 80
+  vJoystick: {fileID: 0}
 --- !u!114 &4445926613993314032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,7 +268,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4445926613993314037}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d22dcf31e6493ed4cbd4028c3ee5d27e, type: 3}
   m_Name: 
@@ -343,7 +344,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd1396f0d52d8704eafd06905fa56e5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 0
 --- !u!114 &4445926613993314041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -477,6 +477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f54fb0dd51f09940afdccfa4533d8d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vJoystick: {fileID: 0}
 --- !u!1 &4445926614350929816
 GameObject:
   m_ObjectHideFlags: 0
