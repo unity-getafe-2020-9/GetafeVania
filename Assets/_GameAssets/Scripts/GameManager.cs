@@ -70,6 +70,7 @@ public class GameManager : MonoBehaviour
         if (continueGame) RecuperarEstado();
         txtPuntuacion.text = puntuacion.ToString();
         numeroVidas = numeroVidasMaximo;
+        
         GetComponent<UIManager>().CrearVidasUI(numeroVidas, prefabImagenVida, panelVidas);
         if (UseVJoystick())
         {
@@ -79,11 +80,25 @@ public class GameManager : MonoBehaviour
             mobileControls.SetActive(false);
         }
     }
+
+    private void Start()
+    {
+        //STATUS
+        if (GameStatusManager.Instance.GetNumeroVidas() > 0)
+        {
+            numeroVidas = GameStatusManager.Instance.GetNumeroVidas();
+            GetComponent<UIManager>().CrearVidasUI(numeroVidas, prefabImagenVida, panelVidas);
+            puntuacion = GameStatusManager.Instance.GetPuntuacion();
+            txtPuntuacion.text = puntuacion.ToString();
+        }
+        //FIN DE STATUS
+
+    }
     public void QuitarVida()
     {
         if (godMode) return;
-
         numeroVidas--;
+        GameStatusManager.Instance.SetNumeroVidas(numeroVidas);//STATUS DEL JUEGO
         GetComponent<UIManager>().CrearVidasUI(numeroVidas, prefabImagenVida, panelVidas);
         if (numeroVidas == 0)
         {
@@ -101,6 +116,7 @@ public class GameManager : MonoBehaviour
     public void IncrementarPuntuacion(int puntos)
     {
         puntuacion += puntos;
+        GameStatusManager.Instance.SetPuntuacion(puntuacion);//STATUS DEL JUEGO
         txtPuntuacion.text = puntuacion.ToString();
     }
     public void GuardarEstado()
