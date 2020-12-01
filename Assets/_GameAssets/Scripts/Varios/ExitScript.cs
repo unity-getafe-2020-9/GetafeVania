@@ -20,6 +20,8 @@ public class ExitScript : MonoBehaviour
         if (collision.CompareTag("Player")){
             if (gameManager.hasKey)
             {
+                GameStatusManager.Instance.SetNumeroVidas(gameManager.numeroVidas);
+                GameStatusManager.Instance.SetPuntuacion(gameManager.puntuacion);
                 SceneManager.LoadScene(nextSceneName);
             }
         }
