@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f008360b39da4ce40b69691a0034e4f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useVJoystick: 0
+  useVJoystick: 1
   estado: 0
   soundOn: 1
   musicOn: 1
@@ -60,10 +60,6 @@ MonoBehaviour:
   godMode: 0
   prefabImagenVida: {fileID: 3303638349451342350, guid: 6d2250abd129a724a98f3cb841f8966e,
     type: 3}
-  panelVidas: {fileID: 0}
-  txtPuntuacion: {fileID: 0}
-  txtGameOver: {fileID: 0}
-  mobileControls: {fileID: 0}
 --- !u!114 &5631806761722741964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,4 +72,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68935652c928651489e507447cb17728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imagenLlave: {fileID: 0}
