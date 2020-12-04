@@ -9,6 +9,7 @@ TagManager:
   - Pincho
   - Coin
   - EnemigoDestruible
+  - Escalera
   layers:
   - Default
   - TransparentFX
